@@ -8,13 +8,14 @@ const Picture = ({ data }) => {
   return (
     <div className='picture pb-4'>
       <p>{data.photographer}</p>
+      <a target='_blank' href={data.src.large}>
       <motion.div 
-        className='imageContainer' 
+        className='imageContainer bg-cover' 
         whileHover={{scale: 0.9}}
         style={{ backgroundImage: `url(${data.src.large})` }}
       >
       </motion.div>
-      <p>Download pic: <a target='_blank' href={data.src.large}>down</a></p>
+        </a>
     </div>
   );
 };

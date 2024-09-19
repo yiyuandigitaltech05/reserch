@@ -1,21 +1,21 @@
 import React from 'react'
 import { Link , Outlet  } from 'react-router-dom'
 import Homepage from './pages/Homepage'
-import About from './pages/About'
 import Footer from './footer/Footer'
-
+import { ModeToggle } from './UI/ModeToggle'
+import { motion } from 'framer-motion'
 
 const Layout = () => {
   return (
     <div>
-        <nav>
-            <ul>
+        <nav className='max-w-[1280px] mx-auto py-16' >
+            <ul className='flex gap-4 justify-start'>
                 <li>
-                    <Link to="/">Homepage</Link> 
+                    <Link to="/" className='font-bold'>Homepage</Link> 
                 </li>
-                <li>
-                    <Link to="/about">About</Link> 
-                </li>
+                <motion.li className='ml-auto'>
+                    <ModeToggle/>
+                </motion.li>
             </ul>
         </nav>
         <Outlet/>
